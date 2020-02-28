@@ -1,13 +1,6 @@
 version: '3'
 services:
-    node:
-        image: "node:stretch"
-        user: "node"
-        working_dir: /home/node/app
-        environment:
-            - NODE_ENV=production
-        volumes:
-            - ./:/home/node/app
-        expose:
-            - "8001"
-        command: "npm start"
+    api:
+        build: ./
+        ports:
+        - "3334:3334"
